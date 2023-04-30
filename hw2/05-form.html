@@ -1,20 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>05 - Form</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-    <script defer src="05-form.js"></script>
-  </head>
-  <body>
-    <main>
-      <form>
-        <h1>Exercise 05 - Form</h1>
-      </form>
-    </main>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>05 - Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+  <script defer src="05-form.js"></script>
+</head>
+<body class="bg-dark">
+  <main class="mt-5 w-50 bg-white mx-auto p-3 container-sm rounded-1">
+    <form class="bg-light" id="form">
+      <div class="form">
+        <h1 class="text-center">Exercise 05 - Form</h1>
+        <div class="mb-3">
+          <label for="username" class="form-label h6"><strong>Full Name:</strong></label>
+          <input type="text" id="username" name="username" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label h6"><strong>Email:</strong></label>
+          <input id="email" name="email" type="email" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="registrationStatus" class="form-label h6"><strong>Registration Status:</strong></label>
+          <select id="registrationStatus" class="form-select" aria-label="registrationStatus">
+            <option selected>Choose an Option</option>
+            <option value="1">Registered</option>
+            <option value="2">Not Registered</option>
+            <option value="3">Waitlisted</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <fieldset>
+            <legend class="h6"><strong>Have you taken any of the following courses?</strong></legend>
+            <div>
+              <input type="checkbox" id="prog_language" name="prog_language" class="form-check-input">
+              <label for="prog_language" class="form-check-label">Programming Languages</label>
+            </div>
+            <div>
+              <input type="checkbox" id="os" name="os" class="form-check-input">
+              <label for="os" class="form-check-label">Operating Systems</label>
+            </div>
+            <div>
+              <input type="checkbox" id="fullstack_webdev" name="fullstack_webdev" class="form-check-input">
+              <label for="fullstack_webdev" class="form-check-label">Full Stack Web Development</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="mb-3">
+          <label for="anything_else" class="form-label"><strong>Anything else?</strong></label>
+          <textarea id="anything_else" rows="5" class="form-control"></textarea>
+        </div>
+        <div class="mb-3 btn-group w-100">
+          <button type="submit" id="submit" value="Submit" class="btn btn-primary rounded-1">Submit</button>
+          <button type="reset" id="reset" value="Reset" class="btn btn-secondary rounded-1" style="margin-left: 5px;">Reset</button>
+        </div>
+      </div>
+    </form>
+  </main>
+</body>
 </html>
