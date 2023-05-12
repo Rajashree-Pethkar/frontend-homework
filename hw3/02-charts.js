@@ -55,33 +55,33 @@ const borderColors = [
 ];
 
 // url for the Thrones API
-const url = 'https://thronesapi.com/api/v2/Characters';
+const url = "https://thronesapi.com/api/v2/Characters";
 
 const familyCounts = {
-  'House Targaryen' : 0,
-  'House Baratheon' : 0,
-  'House Tarly': 0,
-  'House Stark': 0,
-  'House Lannister' : 0,
-  'House Greyjoy' : 0,
-  'House Clegaen' : 0,
-  'House Baelish' : 0,
-  'House Seaworth' : 0,
-  'House Tyrell' : 0,
-  'Free folk' : 0,
-  'Tarth' : 0,
-  'Naathi' : 0,
-  'Bolton' : 0,
-  'Naharis' : 0,
-  'Lorathi' : 0, 
-  'Mormont' : 0, 
-  'Sparrow' : 0, 
-  'Viper' : 0, 
-  'Unknown' : 0, 
-  'Sand' : 0,
-  'Worm' : 0, 
-  'Qyburn' : 0, 
-  'Bronn' : 0
+  "House Targaryen": 0,
+  "House Baratheon": 0,
+  "House Tarly": 0,
+  "House Stark": 0,
+  "House Lannister": 0,
+  "House Greyjoy": 0,
+  "House Clegaen": 0,
+  "House Baelish": 0,
+  "House Seaworth": 0,
+  "House Tyrell": 0,
+  "Free folk": 0,
+  "Tarth": 0,
+  "Naathi": 0,
+  "Bolton": 0,
+  "Naharis": 0,
+  "Lorathi": 0,
+  "Mormont": 0,
+  "Sparrow": 0,
+  "Viper": 0,
+  "Unknown": 0,
+  "Sand": 0,
+  "Worm": 0,
+  "Qyburn": 0,
+  "Bronn": 0,
 };
 
 async function getAPIData() {
@@ -100,10 +100,9 @@ async function getAPIData() {
         const typos_Stark = ["Stark"];
         const typos_freefolk = ["Free Folk"];
         const typos_clegaen = ["House Clegane"];
-        if (typos_Targ.includes(c.family)) { 
+        if (typos_Targ.includes(c.family)) {
           familyCounts["House Targaryen"] += 1;
-        }
-        else if (typos_Barath.includes(c.family)) {
+        } else if (typos_Barath.includes(c.family)) {
           familyCounts["House Baratheon"] += 1;
         } else if (typos_clegaen.includes(c.family)) {
           familyCounts["House Clegaen"] += 1;
@@ -121,22 +120,23 @@ async function getAPIData() {
           familyCounts[c.family] = 1;
         }
       }
-    }); 
+    });
     return familyCounts;
   } catch (error) {
     console.error(error);
   }
 }
 
-getAPIData().then((familyDict) => {
-      const keys = Object.keys(familyDict);
-      const values = Object.values(familyDict);
-      renderChart(keys, values);
-    })
-    .catch((error) => console.error(error));;
+getAPIData()
+  .then((familyDict) => {
+    const keys = Object.keys(familyDict);
+    const values = Object.values(familyDict);
+    renderChart(keys, values);
+  })
+  .catch((error) => console.error(error));
 
 const renderChart = (keys, values) => {
-  const donutChart = document.querySelector('.donut-chart');
+  const donutChart = document.querySelector(".donut-chart");
 
   new Chart(donutChart, {
     type: "doughnut",
@@ -162,8 +162,8 @@ const renderChart = (keys, values) => {
         fontFamily: "sans-serif",
       },
       legend: {
-        display: false
+        display: false,
+      },
     },
-    }
   });
 };

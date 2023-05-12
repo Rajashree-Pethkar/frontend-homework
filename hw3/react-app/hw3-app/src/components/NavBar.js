@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, NavLink, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Search from "./Search";
 import Houses from "./Houses";
-import axios from "axios";
 
 function Navbar() {
-  const [characters, setCharacters] = useState([]);
-  const url = "https://thronesapi.com/api/v2/Characters";
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setCharacters(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   return (
     <Router>
       <nav>
@@ -43,8 +29,8 @@ function Navbar() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/search" element={<Search characters={characters} />} />
-        <Route path="/houses" element={<Houses characters={characters} />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/houses" element={<Houses />} />
       </Routes>
     </Router>
   );
