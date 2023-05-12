@@ -26,8 +26,6 @@ fetch(url)
 
         let characterDetails = document.createElement("div");
         characterDetails.classList = "row h-25 text-center p-2 mx-auto";
-        //characterDetails.style = "width:90%";
-
 
         let characterNameTitleDiv = document.createElement("div");
         characterNameTitleDiv.classList = "col";
