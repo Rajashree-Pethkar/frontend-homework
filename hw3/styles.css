@@ -17,3 +17,29 @@ h1 {
   border-radius: 0.8rem;
   background-color: var(--white);
 }
+
+@media (min-width: 1024px) {
+  section#main-section{
+    margin-left: 4rem !important;
+    margin-right: 4rem !important;
+  }
+  #character-name{
+    font-size: 1.2rem !important;
+  }
+    #character-title {
+      font-size: 0.8rem !important;
+    }
+}
+
+#thrones-characters:hover {
+  background-color: var(--blue) !important;
+  border-radius: 0 !important;
+}
+
+#thrones-characters:hover p#character-name {
+  color: white;
+}
+
+#thrones-characters:hover p#character-title {
+  color: white;
+}

@@ -8,6 +8,7 @@ h1 {
 
 .donut-chart {
   padding: 2rem;
-  border-radius: 0.8rem;
+  border-radius: 0.2rem;
   background-color: var(--white);
+  width: 90% !important;
 }
