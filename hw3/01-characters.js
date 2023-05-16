@@ -33,7 +33,7 @@ fetch(url)
         let characterName = document.createElement('p');
         characterName.classList = "fw-bold mx-auto mb-0";
         characterName.style = "font-size: 0.9rem;";
-        characterName.innerText = c["fullName"];
+        characterName.textContent(c["fullName"]);
         characterName.id = "character-name";
 
         characterNameTitleDiv.appendChild(characterName);
@@ -42,7 +42,7 @@ fetch(url)
         characterTitle.id = "character-title";
         characterTitle.classList = "fw-bold mx-auto mb-0";
         characterTitle.style = "font-size: 0.6rem;";
-        characterTitle.innerText = c["title"];
+        characterTitle.textContent(c["title"]);
 
         characterNameTitleDiv.appendChild(characterTitle);
 
